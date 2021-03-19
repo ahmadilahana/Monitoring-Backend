@@ -1,0 +1,16 @@
+{
+    "name": "ilahana/topik-3",
+    "description": "menggunakan composer untuk tugas topik-3",
+    "authors": [
+        {
+            "name": "ahmadilahana",
+            "email": "ahmadilahana@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "aritmatika\\":"aritmatika/"
+        }
+    }
+}

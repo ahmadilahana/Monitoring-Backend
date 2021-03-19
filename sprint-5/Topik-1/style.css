@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    background: #E7E8E3;
+    width: 100%;
+    justify-content: center;
+}
+.main-menu{
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    max-width: auto;
+    height: auto;
+    border: 5px dashed black;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+.item{
+    display: none;
+    width: auto;
+    height: auto;
+    padding: 30px;
+}
+.item form{
+    display: flex;
+    flex-direction: column;
+
+}
+input{
+    margin: 10px;
+}
+button{
+    margin: 10px;
+}
+.active{
+    display: block;
+}

@@ -1,0 +1,17 @@
+Options -Multiviews
+
+# mengaktifkan RewriteEngine
+RewriteEngine On
+
+# cek direktori ada atau tidak jika tidak ada akan lanjut program di bawahnya
+# -d : cek direkotiri
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# cek file ada atau tidak jika tidak ada akan lanjut program di bawahnya
+# -f : cek file 
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# ^(.*)$ : Regule Expretion
+# [L] (flags) : penutup RewriteRule / akhir proses
+# RewriteRule [tujuan url] [url asal]
+RewriteRule ^(.*)$ index.php?url=$1 [L]

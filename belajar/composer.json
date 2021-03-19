@@ -1,0 +1,12 @@
+{
+    "name": "ilahana/belajar",
+    "authors": [
+        {
+            "name": "ahmadilahana",
+            "email": "ahmadilahana@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    }
+}

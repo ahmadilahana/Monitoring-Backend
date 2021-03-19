@@ -1,0 +1,13 @@
+{
+    "name": "ilahana/evaluasi-5",
+    "description": "evaluasi",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "authors": [
+        {
+            "name": "ahmadilahana",
+            "email": "ahmadilahana@gmail.com"
+        }
+    ]
+}
