@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <label for="subject">Subject</label>
-            <textarea class="form-control" style="overflow: none" name="subject" id="subject">{{$data['subject']}}</textarea>
+            <textarea class="form-control" style="min-height: 250px; max-height: auto" name="subject" id="subject">{{$data['subject']}}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Ubah</button>
     </form>
