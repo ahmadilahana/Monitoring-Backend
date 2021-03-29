@@ -13,22 +13,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ArtikelController@index');
-
-Route::get('/artikel', 'ArtikelController@index');
-Route::get('/artikel/create', 'ArtikelController@create');
-Route::get('/artikel/daftar', 'ArtikelController@daftar');
-Route::get('/artikel/{id}', 'ArtikelController@show');
-Route::get('/artikel/edit/{id}', 'ArtikelController@edit');
-Route::put('/artikel/update/{id}', 'ArtikelController@update');
-Route::get('/artikel/delete/{id}', 'ArtikelController@delete');
-Route::post('/artikel/store', 'ArtikelController@store');
+// Route::get('/', 'ArtikelController@index');
+// Route::get('/welcome', function(){
+//     return view('welcome');
+// });
 
 
-Route::get('/santri', 'SantriController@index')->name('index-santri');
-Route::get('/santri/create', 'SantriController@create');
-Route::post('/santri', 'SantriController@store')->name('create-santri');
-Route::get('/santri/{id}', 'SantriController@show')->name('show-santri');
-Route::get('/santri/edit/{id}', 'SantriController@edit')->name('edit-santri');
-Route::put('/santri/update/{id} ', 'SantriController@update')->name('update-santri');
-Route::get('/santri/delete/{id} ', 'SantriController@destroy');
+// Route::get('/santri', 'SantriController@index')->name('index-santri');
+// Route::get('/santri/create', 'SantriController@create');
+// Route::post('/santri', 'SantriController@store')->name('create-santri');
+// Route::get('/santri/{id}', 'SantriController@show')->name('show-santri');
+// Route::get('/santri/edit/{id}', 'SantriController@edit')->name('edit-santri');
+// Route::put('/santri/update/{id} ', 'SantriController@update')->name('update-santri');
+// Route::get('/santri/delete/{id} ', 'SantriController@destroy');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'artikel',
+], function()
+   { 
+    Route::get('/', 'ArtikelController@index');
+    Route::get('/create', 'ArtikelController@create');
+    Route::get('/daftar', 'ArtikelController@daftar');
+    Route::get('/{id}', 'ArtikelController@show');
+    Route::get('/edit/{id}', 'ArtikelController@edit');
+    Route::put('/update/{id}', 'ArtikelController@update');
+    Route::get('/delete/{id}', 'ArtikelController@delete');
+    Route::post('/store', 'ArtikelController@store');
+});

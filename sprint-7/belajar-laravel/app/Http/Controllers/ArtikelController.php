@@ -44,7 +44,7 @@ class ArtikelController extends Controller
         $artikel->subject = $request->subject;
         $artikel->save();
 
-        return redirect('/artikel/daftar');
+        return redirect('/artikel/daftar')->with("success", "Artikel berhasil ditambahkan");
     }
 
     public function edit(Artikels $id)

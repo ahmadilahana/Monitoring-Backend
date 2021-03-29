@@ -2,7 +2,7 @@
 
 @section('title', 'Daftar Artikel')
 
-@section('conten')
+@section('content')
 <div class="d-flex flex-column mt-3">
     <h2 class="text-center">{{$data['judul']}}</h2>
     <p class="mt-3">{{$data['subject']}}</p>

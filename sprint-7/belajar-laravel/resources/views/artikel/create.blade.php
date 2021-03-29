@@ -2,7 +2,8 @@
 
 @section('title', 'Buat Artikel')
 
-@section('conten')
+@section('content')
+<div class="container">
     <h1>Buat Artikel Baru</h1>
 
     <form action="/artikel/store" method="post">
@@ -17,5 +18,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Tambah</button>
     </form>
-
+</div>
 @endsection

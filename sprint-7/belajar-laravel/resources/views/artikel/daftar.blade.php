@@ -2,9 +2,18 @@
 
 @section('title', 'Daftar Artikel')
 
-@section('conten')
+@section('content')
+<div class="container">
 <h1>Daftar Artikel</h1>
 <a href="/artikel/create" class="btn btn-primary mb-3">Buat Artikel</a>
+@if (session('success'))
+  <div class="alert alert-warning alert-dismissible fade show col-sm-4" role="alert">
+    {{ session('success') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+@endif
 <table class="table w-100">
   <thead class="thead-dark">
     <tr>
@@ -35,5 +44,6 @@
 
     {{ $artikels->links('vendor.pagination.pagination') }}
 
+</div>
 </div>
 @endsection

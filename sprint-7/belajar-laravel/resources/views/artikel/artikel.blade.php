@@ -2,7 +2,8 @@
 
 @section('title', 'Artikel')
 
-@section('conten')
+@section('content')
+<div class="container">
 <h1>Artikel</h1>
 <div class="row">
       @foreach ($artikels as $item)
@@ -21,5 +22,6 @@
 
     {{ $artikels->links('vendor.pagination.pagination') }}
 
+</div>
 </div>
 @endsection

@@ -2,7 +2,8 @@
 
 @section('title', 'Edit Artikel')
 
-@section('conten')
+@section('content')
+<div class="container">
     <h1>Edit Artikel</h1>
 
     <form action="/artikel/update/{{$data['id']}}" method="post">
@@ -18,5 +19,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Ubah</button>
     </form>
-
+</div>
 @endsection
