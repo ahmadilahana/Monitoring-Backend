@@ -11,7 +11,19 @@
         @method('PUT')
         <div class="form-group">
             <label for="title">Judul</label>
-            <input type="text" name="title" id="title" value="{{$data['judul']}}">
+            <input type="text" class="form-control w-25" name="title" id="title" value="{{$data['judul']}}">
+        </div>
+        <div class="form-group">
+            <label for="kategori">Kategori</label>
+            <br>
+            <select class="custom-select w-25 form-control" name="kategori" id="kategori">
+                <option value="">Pilih Kategori</option>
+                @foreach ($kategori as $item)
+                    <option value="{{ $item['id'] }}" @if ($item['id'] == $data['kat_artikel_id'])
+                        selected
+                    @endif>{{ $item['kategori'] }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label for="subject">Subject</label>

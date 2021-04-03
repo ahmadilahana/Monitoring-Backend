@@ -19,6 +19,8 @@ class ArtikelTable extends Migration
                 $table->id()->autoIncrement();
                 $table->string('judul', 100);
                 $table->text('subject');
+                $table->foreignId('kat_artikel_id');
+                $table->timestamps();
             });
         }
     }

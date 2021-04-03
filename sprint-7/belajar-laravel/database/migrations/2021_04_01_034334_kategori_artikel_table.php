@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserTable extends Migration
+class KategoriArtikelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class UserTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table)
-        {
-            $table->id()->autoIncrement();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-        });
+        if (!Schema::hasTable('tb_kat_artikel')) {
+            Schema::create('tb_kat_artikel', function (Blueprint $table)
+            {
+                $table->id()->autoIncrement();
+                $table->string('kategori', 100);
+            });
+        }
     }
 
     /**

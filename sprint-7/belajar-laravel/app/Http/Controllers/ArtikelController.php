@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikels;
+use App\Models\KategoriArtikel;
 use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
@@ -29,19 +30,22 @@ class ArtikelController extends Controller
     public function create()
     {
         // die($hal);
-        return view("artikel.create");
+        $kategori = KategoriArtikel::all();
+        return view("artikel.create", compact('kategori'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required',
-            'subject' => 'required'
+            'subject' => 'required',
+            'kategori' => 'required'
         ]);
         // dd($request);
         $artikel = new Artikels;
         $artikel->judul = $request->title;
         $artikel->subject = $request->subject;
+        $artikel->kat_artikel_id = $request->kategori;
         $artikel->save();
 
         return redirect('/artikel/daftar')->with("success", "Artikel berhasil ditambahkan");
@@ -50,21 +54,25 @@ class ArtikelController extends Controller
     public function edit(Artikels $id)
     {
         $data = $id;
-        return view("artikel.edit", compact('data') );
+        $kategori = KategoriArtikel::all();
+        return view("artikel.edit", compact('data', 'kategori') );
+
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
-            'subject' => 'required'
+            'subject' => 'required',
+            'kategori' => 'required'
             ]);
             
             // dd($request);
-        $santri = Artikels::find($id);
-        $santri->judul = $request->title;
-        $santri->subject = $request->subject;
-        $santri->update();
+        $artikel = Artikels::find($id);
+        $artikel->judul = $request->title;
+        $artikel->subject = $request->subject;
+        $artikel->kat_artikel_id = $request->kategori;
+        $artikel->update();
         return redirect('/artikel/daftar');   
     }
 

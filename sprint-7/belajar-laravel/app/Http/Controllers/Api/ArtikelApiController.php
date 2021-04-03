@@ -31,6 +31,7 @@ class ArtikelApiController extends Controller
 
     public function update(Request $request, Artikels $id)
     {
+        // dd($request);
         $id->update(['judul' => $request->judul, 
                     'subject' => $request->subject]);
         return response()->json($id, 200);
